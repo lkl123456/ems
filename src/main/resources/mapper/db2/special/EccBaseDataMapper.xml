@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baho.cssmybatis.dao.dao2.special.EccBaseDataMapper">
+
+    <select id="findAllPlatform" resultType="map">
+        select `fid`as `key` ,`fname` as `value` from t_bd_platform ORDER BY `fid`
+    </select>
+    <select id="findAllShops" resultType="map">
+        select `fid` as `key` ,`fname` as `value` from t_bd_platformshop WHERE 1=1 and `fisEnable` =1
+        <if test="platFormId != null and platFormId != ''">
+            and `fplatformId` = #{platFormId}
+        </if>
+        ORDER BY `fcreateDate`
+    </select>
+    <select id="findAllArea" resultType="map">
+        select `fid`as `key` ,`fname` as `value` from t_bd_area ORDER BY `fid`
+    </select>
+    <select id="findAllECompany" resultType="map">
+        select `fid` as `key` ,`fname` as `value` from t_bd_expresscompany WHERE 1=1
+        <if test="eCompanyId != null and eCompanyId != ''">
+            and `fid` = #{eCompanyId}
+        </if>
+        ORDER BY `fid`
+    </select>
+    <select id="findAllProduct" resultType="com.baho.cssmybatis.common.bean.base.Product">
+        select `fid` as `id`, `fname` as `name`,`fnumber` as `number` from t_bd_material where 1=1 order by `fid`
+    </select>
+    <select id="findSignProduct" resultType="com.baho.cssmybatis.common.bean.base.Product">
+        select `fid` as `id`, `fname` as `name`,`fnumber` as `number` from t_bd_material where 1=1
+        <if test="id != null and id != ''">
+            and `fid` = #{id}
+        </if>
+        order by `fid`
+    </select>
+</mapper>

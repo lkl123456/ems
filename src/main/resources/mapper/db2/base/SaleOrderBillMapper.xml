@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baho.cssmybatis.dao.dao2.base.SaleOrderBillMapper">
+    <resultMap id="BaseResultMap" type="com.baho.cssmybatis.dao.entity.db2.base.SaleOrderBill">
+        <id column="fid" jdbcType="VARCHAR" property="fid"/>
+        <result column="fcreateDate" jdbcType="TIMESTAMP" property="fcreateDate"/>
+        <result column="fcreateUser" jdbcType="VARCHAR" property="fcreateUser"/>
+        <result column="flastUpdateTime" jdbcType="TIMESTAMP" property="flastUpdateTime"/>
+        <result column="flastUpdateUser" jdbcType="VARCHAR" property="flastUpdateUser"/>
+        <result column="fbillNumber" jdbcType="VARCHAR" property="fbillNumber"/>
+        <result column="ftradeNumber" jdbcType="VARCHAR" property="ftradeNumber"/>
+        <result column="fbillStatus" jdbcType="INTEGER" property="fbillStatus"/>
+        <result column="fplatformId" jdbcType="VARCHAR" property="fplatformId"/>
+        <result column="fplatformShopId" jdbcType="VARCHAR" property="fplatformShopId"/>
+        <result column="fsalePersonId" jdbcType="VARCHAR" property="fsalePersonId"/>
+        <result column="fsaleOrgId" jdbcType="VARCHAR" property="fsaleOrgId"/>
+        <result column="fwarehouseId" jdbcType="VARCHAR" property="fwarehouseId"/>
+        <result column="ftotalAmt" jdbcType="DECIMAL" property="ftotalAmt"/>
+        <result column="factualPayAmt" jdbcType="DECIMAL" property="factualPayAmt"/>
+        <result column="fplatShopDisAmt" jdbcType="DECIMAL" property="fplatShopDisAmt"/>
+        <result column="fplatDisAmt" jdbcType="DECIMAL" property="fplatDisAmt"/>
+        <result column="fcusDisAmt" jdbcType="DECIMAL" property="fcusDisAmt"/>
+        <result column="freceivableAmt" jdbcType="DECIMAL" property="freceivableAmt"/>
+        <result column="fpostage" jdbcType="DECIMAL" property="fpostage"/>
+        <result column="finvoiceAmt" jdbcType="DECIMAL" property="finvoiceAmt"/>
+        <result column="forderDate" jdbcType="TIMESTAMP" property="forderDate"/>
+        <result column="fpayDate" jdbcType="TIMESTAMP" property="fpayDate"/>
+        <result column="fdeliveryTime" jdbcType="TIMESTAMP" property="fdeliveryTime"/>
+        <result column="fsendTime" jdbcType="TIMESTAMP" property="fsendTime"/>
+        <result column="fcurrencyId" jdbcType="VARCHAR" property="fcurrencyId"/>
+        <result column="fremark" jdbcType="VARCHAR" property="fremark"/>
+        <result column="fvipId" jdbcType="VARCHAR" property="fvipId"/>
+        <result column="fbuyName" jdbcType="VARCHAR" property="fbuyName"/>
+        <result column="fbuyerAlipayNo" jdbcType="VARCHAR" property="fbuyerAlipayNo"/>
+        <result column="falipayNo" jdbcType="VARCHAR" property="falipayNo"/>
+        <result column="falipayId" jdbcType="VARCHAR" property="falipayId"/>
+        <result column="fbuyCountryId" jdbcType="VARCHAR" property="fbuyCountryId"/>
+        <result column="fbuyProvinceId" jdbcType="VARCHAR" property="fbuyProvinceId"/>
+        <result column="fbuyCityId" jdbcType="VARCHAR" property="fbuyCityId"/>
+        <result column="fbuyRegionId" jdbcType="VARCHAR" property="fbuyRegionId"/>
+        <result column="fbuyAddress" jdbcType="VARCHAR" property="fbuyAddress"/>
+        <result column="fbuyAccount" jdbcType="VARCHAR" property="fbuyAccount"/>
+        <result column="fbuyMobile" jdbcType="VARCHAR" property="fbuyMobile"/>
+        <result column="fbuyPhone" jdbcType="VARCHAR" property="fbuyPhone"/>
+        <result column="fbuyZipcode" jdbcType="VARCHAR" property="fbuyZipcode"/>
+        <result column="fexpressCompanyId" jdbcType="VARCHAR" property="fexpressCompanyId"/>
+        <result column="ftrackNumber" jdbcType="VARCHAR" property="ftrackNumber"/>
+        <result column="fbuyRemark" jdbcType="VARCHAR" property="fbuyRemark"/>
+        <result column="fisInvoice" jdbcType="INTEGER" property="fisInvoice"/>
+        <result column="finvoiceType" jdbcType="INTEGER" property="finvoiceType"/>
+        <result column="finvoiceHead" jdbcType="VARCHAR" property="finvoiceHead"/>
+        <result column="finvoiceAddress" jdbcType="VARCHAR" property="finvoiceAddress"/>
+        <result column="finvoicePhone" jdbcType="VARCHAR" property="finvoicePhone"/>
+        <result column="finvoiceTaxpayer" jdbcType="VARCHAR" property="finvoiceTaxpayer"/>
+        <result column="finvoiceAccount" jdbcType="VARCHAR" property="finvoiceAccount"/>
+        <result column="finvoiceBank" jdbcType="VARCHAR" property="finvoiceBank"/>
+        <result column="ftotalQty" jdbcType="DECIMAL" property="ftotalQty"/>
+        <result column="ftotalCatQty" jdbcType="DECIMAL" property="ftotalCatQty"/>
+        <result column="fentrySize" jdbcType="INTEGER" property="fentrySize"/>
+        <result column="fstandardWeight" jdbcType="DECIMAL" property="fstandardWeight"/>
+        <result column="fstandardPostage" jdbcType="DECIMAL" property="fstandardPostage"/>
+        <result column="fweight" jdbcType="DECIMAL" property="fweight"/>
+        <result column="factualPostage" jdbcType="DECIMAL" property="factualPostage"/>
+        <result column="fisReachPay" jdbcType="INTEGER" property="fisReachPay"/>
+        <result column="fexceptionId" jdbcType="VARCHAR" property="fexceptionId"/>
+        <result column="fexceptReason" jdbcType="VARCHAR" property="fexceptReason"/>
+        <result column="fsourceSoNumber" jdbcType="VARCHAR" property="fsourceSoNumber"/>
+        <result column="fsourceSoId" jdbcType="VARCHAR" property="fsourceSoId"/>
+        <result column="fbesplit" jdbcType="INTEGER" property="fbesplit"/>
+        <result column="fbemerge" jdbcType="INTEGER" property="fbemerge"/>
+        <result column="fauditor" jdbcType="VARCHAR" property="fauditor"/>
+        <result column="fauditTime" jdbcType="TIMESTAMP" property="fauditTime"/>
+        <result column="fwavebillNumber" jdbcType="VARCHAR" property="fwavebillNumber"/>
+        <result column="fwavebillId" jdbcType="VARCHAR" property="fwavebillId"/>
+        <result column="finwaveTime" jdbcType="TIMESTAMP" property="finwaveTime"/>
+        <result column="fwavePerson" jdbcType="VARCHAR" property="fwavePerson"/>
+        <result column="fprintPerson" jdbcType="VARCHAR" property="fprintPerson"/>
+        <result column="fprintTime" jdbcType="TIMESTAMP" property="fprintTime"/>
+        <result column="fcheckTime" jdbcType="TIMESTAMP" property="fcheckTime"/>
+        <result column="fcheckPerson" jdbcType="VARCHAR" property="fcheckPerson"/>
+        <result column="fweightPerson" jdbcType="VARCHAR" property="fweightPerson"/>
+        <result column="fweightTime" jdbcType="TIMESTAMP" property="fweightTime"/>
+        <result column="fsellerRemark" jdbcType="VARCHAR" property="fsellerRemark"/>
+        <result column="fisurgent" jdbcType="INTEGER" property="fisurgent"/>
+        <result column="fispresale" jdbcType="INTEGER" property="fispresale"/>
+        <result column="ftradeFrom" jdbcType="VARCHAR" property="ftradeFrom"/>
+        <result column="ffullAddress" jdbcType="VARCHAR" property="ffullAddress"/>
+        <result column="fshippingType" jdbcType="VARCHAR" property="fshippingType"/>
+        <result column="fboxBarCode" jdbcType="VARCHAR" property="fboxBarCode"/>
+        <result column="fshortAddress" jdbcType="VARCHAR" property="fshortAddress"/>
+        <result column="fpackageCenterName" jdbcType="VARCHAR" property="fpackageCenterName"/>
+        <result column="fpackageCenterCode" jdbcType="VARCHAR" property="fpackageCenterCode"/>
+        <result column="fweightUnit" jdbcType="VARCHAR" property="fweightUnit"/>
+        <result column="fboxseq" jdbcType="INTEGER" property="fboxseq"/>
+        <result column="fisOut" jdbcType="INTEGER" property="fisOut"/>
+        <result column="fsaleIssueNumber" jdbcType="VARCHAR" property="fsaleIssueNumber"/>
+        <result column="finvoiceNumber" jdbcType="VARCHAR" property="finvoiceNumber"/>
+        <result column="feditAmt" jdbcType="DECIMAL" property="feditAmt"/>
+        <result column="feditReason" jdbcType="VARCHAR" property="feditReason"/>
+        <result column="fsaleReturnNumber" jdbcType="VARCHAR" property="fsaleReturnNumber"/>
+        <result column="fbillType" jdbcType="INTEGER" property="fbillType"/>
+        <result column="fcompany" jdbcType="VARCHAR" property="fcompany"/>
+        <result column="fagentsName" jdbcType="VARCHAR" property="fagentsName"/>
+        <result column="fagentsNo" jdbcType="VARCHAR" property="fagentsNo"/>
+        <result column="fadminOrgUnit" jdbcType="VARCHAR" property="fadminOrgUnit"/>
+        <result column="frequestPerson" jdbcType="VARCHAR" property="frequestPerson"/>
+        <result column="finvoiceDeatail" jdbcType="VARCHAR" property="finvoiceDeatail"/>
+        <result column="fshareCode" jdbcType="VARCHAR" property="fshareCode"/>
+        <result column="fcustomerName" jdbcType="VARCHAR" property="fcustomerName"/>
+        <result column="fupdateLogisticsStatus" jdbcType="INTEGER" property="fupdateLogisticsStatus"/>
+        <result column="fversion" jdbcType="INTEGER" property="fversion"/>
+        <result column="fexpress_type" jdbcType="VARCHAR" property="fexpress_type"/>
+        <result column="fpay_method" jdbcType="VARCHAR" property="fpay_method"/>
+        <result column="fbeInvoice" jdbcType="INTEGER" property="fbeInvoice"/>
+        <result column="fwechatOrderNumber" jdbcType="VARCHAR" property="fwechatOrderNumber"/>
+        <result column="flocationGroupId" jdbcType="VARCHAR" property="flocationGroupId"/>
+        <result column="fprintData" jdbcType="VARCHAR" property="fprintData"/>
+        <result column="fsaleReturnId" jdbcType="VARCHAR" property="fsaleReturnId"/>
+        <result column="fstandardVolume" jdbcType="DECIMAL" property="fstandardVolume"/>
+        <result column="fcustomNo" jdbcType="VARCHAR" property="fcustomNo"/>
+        <result column="fmaterialInsurancefee" jdbcType="DECIMAL" property="fmaterialInsurancefee"/>
+        <result column="fsellerflag" jdbcType="INTEGER" property="fsellerflag"/>
+        <result column="fisreturn" jdbcType="BIT" property="fisreturn"/>
+        <result column="fisprocess" jdbcType="BIT" property="fisprocess"/>
+        <result column="fisrefund" jdbcType="BIT" property="fisrefund"/>
+        <result column="fislack" jdbcType="BIT" property="fislack"/>
+        <result column="fisoutware" jdbcType="BIT" property="fisoutware"/>
+        <result column="foutbillno" jdbcType="VARCHAR" property="foutbillno"/>
+        <result column="foutcancelstatus" jdbcType="BIT" property="foutcancelstatus"/>
+        <result column="fouterrmsg" jdbcType="VARCHAR" property="fouterrmsg"/>
+        <result column="fallotstatus" jdbcType="BIT" property="fallotstatus"/>
+        <result column="fallotcancelstatus" jdbcType="BIT" property="fallotcancelstatus"/>
+        <result column="falloterrmsg" jdbcType="VARCHAR" property="falloterrmsg"/>
+        <result column="fsendStartTime" jdbcType="TIMESTAMP" property="fsendStartTime"/>
+        <result column="fprocessTime" jdbcType="INTEGER" property="fprocessTime"/>
+        <result column="fpickTime" jdbcType="INTEGER" property="fpickTime"/>
+        <result column="fdistributeTime" jdbcType="INTEGER" property="fdistributeTime"/>
+        <result column="femail" jdbcType="VARCHAR" property="femail"/>
+        <result column="fticketDisamt" jdbcType="DECIMAL" property="fticketDisamt"/>
+        <result column="fpromotionDisamt" jdbcType="DECIMAL" property="fpromotionDisamt"/>
+        <result column="fpointDisamt" jdbcType="DECIMAL" property="fpointDisamt"/>
+        <result column="ftransoutware" jdbcType="INTEGER" property="ftransoutware"/>
+        <result column="fgotcode" jdbcType="VARCHAR" property="fgotcode"/>
+        <result column="fshoppick" jdbcType="BIT" property="fshoppick"/>
+        <result column="fsendEndTime" jdbcType="TIMESTAMP" property="fsendEndTime"/>
+        <result column="ftenantid" jdbcType="BIGINT" property="ftenantid"/>
+        <result column="fpresentType" jdbcType="INTEGER" property="fpresentType"/>
+        <result column="fboxQty" jdbcType="INTEGER" property="fboxQty"/>
+        <result column="foperator" jdbcType="VARCHAR" property="foperator"/>
+        <result column="ffinishstatus" jdbcType="VARCHAR" property="ffinishstatus"/>
+        <result column="finvoiceKind" jdbcType="INTEGER" property="finvoiceKind"/>
+        <result column="fLogisticsErrorCount" jdbcType="INTEGER" property="fLogisticsErrorCount"/>
+        <result column="flogisticsStatus" jdbcType="INTEGER" property="flogisticsStatus"/>
+        <result column="fmergeNumber" jdbcType="VARCHAR" property="fmergeNumber"/>
+        <result column="furgentTime" jdbcType="TIMESTAMP" property="furgentTime"/>
+        <result column="ftransOutBillNo" jdbcType="VARCHAR" property="ftransOutBillNo"/>
+        <result column="foperateCtrlUser" jdbcType="VARCHAR" property="foperateCtrlUser"/>
+        <result column="foperationFee" jdbcType="DECIMAL" property="foperationFee"/>
+        <result column="fisverify" jdbcType="BIT" property="fisverify"/>
+        <result column="fisRelatedAccount" jdbcType="BIT" property="fisRelatedAccount"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        delete from t_sd_saleorderbill
+        where fid = #{fid,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insert" parameterType="com.baho.cssmybatis.dao.entity.db2.base.SaleOrderBill">
+        insert into t_sd_saleorderbill (fid, fcreateDate, fcreateUser,
+        flastUpdateTime, flastUpdateUser, fbillNumber,
+        ftradeNumber, fbillStatus, fplatformId,
+        fplatformShopId, fsalePersonId, fsaleOrgId,
+        fwarehouseId, ftotalAmt, factualPayAmt,
+        fplatShopDisAmt, fplatDisAmt, fcusDisAmt,
+        freceivableAmt, fpostage, finvoiceAmt,
+        forderDate, fpayDate, fdeliveryTime,
+        fsendTime, fcurrencyId, fremark,
+        fvipId, fbuyName, fbuyerAlipayNo,
+        falipayNo, falipayId, fbuyCountryId,
+        fbuyProvinceId, fbuyCityId, fbuyRegionId,
+        fbuyAddress, fbuyAccount, fbuyMobile,
+        fbuyPhone, fbuyZipcode, fexpressCompanyId,
+        ftrackNumber, fbuyRemark, fisInvoice,
+        finvoiceType, finvoiceHead, finvoiceAddress,
+        finvoicePhone, finvoiceTaxpayer, finvoiceAccount,
+        finvoiceBank, ftotalQty, ftotalCatQty,
+        fentrySize, fstandardWeight, fstandardPostage,
+        fweight, factualPostage, fisReachPay,
+        fexceptionId, fexceptReason, fsourceSoNumber,
+        fsourceSoId, fbesplit, fbemerge,
+        fauditor, fauditTime, fwavebillNumber,
+        fwavebillId, finwaveTime, fwavePerson,
+        fprintPerson, fprintTime, fcheckTime,
+        fcheckPerson, fweightPerson, fweightTime,
+        fsellerRemark, fisurgent, fispresale,
+        ftradeFrom, ffullAddress, fshippingType,
+        fboxBarCode, fshortAddress, fpackageCenterName,
+        fpackageCenterCode, fweightUnit, fboxseq,
+        fisOut, fsaleIssueNumber, finvoiceNumber,
+        feditAmt, feditReason, fsaleReturnNumber,
+        fbillType, fcompany, fagentsName,
+        fagentsNo, fadminOrgUnit, frequestPerson,
+        finvoiceDeatail, fshareCode, fcustomerName,
+        fupdateLogisticsStatus, fversion, fexpress_type,
+        fpay_method, fbeInvoice, fwechatOrderNumber,
+        flocationGroupId, fprintData, fsaleReturnId,
+        fstandardVolume, fcustomNo, fmaterialInsurancefee,
+        fsellerflag, fisreturn, fisprocess,
+        fisrefund, fislack, fisoutware,
+        foutbillno, foutcancelstatus, fouterrmsg,
+        fallotstatus, fallotcancelstatus, falloterrmsg,
+        fsendStartTime, fprocessTime, fpickTime,
+        fdistributeTime, femail, fticketDisamt,
+        fpromotionDisamt, fpointDisamt, ftransoutware,
+        fgotcode, fshoppick, fsendEndTime,
+        ftenantid, fpresentType, fboxQty,
+        foperator, ffinishstatus, finvoiceKind,
+        fLogisticsErrorCount, flogisticsStatus,
+        fmergeNumber, furgentTime, ftransOutBillNo,
+        foperateCtrlUser, foperationFee, fisverify,
+        fisRelatedAccount)
+        values (#{fid,jdbcType=VARCHAR}, #{fcreateDate,jdbcType=TIMESTAMP}, #{fcreateUser,jdbcType=VARCHAR},
+        #{flastUpdateTime,jdbcType=TIMESTAMP}, #{flastUpdateUser,jdbcType=VARCHAR}, #{fbillNumber,jdbcType=VARCHAR},
+        #{ftradeNumber,jdbcType=VARCHAR}, #{fbillStatus,jdbcType=INTEGER}, #{fplatformId,jdbcType=VARCHAR},
+        #{fplatformShopId,jdbcType=VARCHAR}, #{fsalePersonId,jdbcType=VARCHAR}, #{fsaleOrgId,jdbcType=VARCHAR},
+        #{fwarehouseId,jdbcType=VARCHAR}, #{ftotalAmt,jdbcType=DECIMAL}, #{factualPayAmt,jdbcType=DECIMAL},
+        #{fplatShopDisAmt,jdbcType=DECIMAL}, #{fplatDisAmt,jdbcType=DECIMAL}, #{fcusDisAmt,jdbcType=DECIMAL},
+        #{freceivableAmt,jdbcType=DECIMAL}, #{fpostage,jdbcType=DECIMAL}, #{finvoiceAmt,jdbcType=DECIMAL},
+        #{forderDate,jdbcType=TIMESTAMP}, #{fpayDate,jdbcType=TIMESTAMP}, #{fdeliveryTime,jdbcType=TIMESTAMP},
+        #{fsendTime,jdbcType=TIMESTAMP}, #{fcurrencyId,jdbcType=VARCHAR}, #{fremark,jdbcType=VARCHAR},
+        #{fvipId,jdbcType=VARCHAR}, #{fbuyName,jdbcType=VARCHAR}, #{fbuyerAlipayNo,jdbcType=VARCHAR},
+        #{falipayNo,jdbcType=VARCHAR}, #{falipayId,jdbcType=VARCHAR}, #{fbuyCountryId,jdbcType=VARCHAR},
+        #{fbuyProvinceId,jdbcType=VARCHAR}, #{fbuyCityId,jdbcType=VARCHAR}, #{fbuyRegionId,jdbcType=VARCHAR},
+        #{fbuyAddress,jdbcType=VARCHAR}, #{fbuyAccount,jdbcType=VARCHAR}, #{fbuyMobile,jdbcType=VARCHAR},
+        #{fbuyPhone,jdbcType=VARCHAR}, #{fbuyZipcode,jdbcType=VARCHAR}, #{fexpressCompanyId,jdbcType=VARCHAR},
+        #{ftrackNumber,jdbcType=VARCHAR}, #{fbuyRemark,jdbcType=VARCHAR}, #{fisInvoice,jdbcType=INTEGER},
+        #{finvoiceType,jdbcType=INTEGER}, #{finvoiceHead,jdbcType=VARCHAR}, #{finvoiceAddress,jdbcType=VARCHAR},
+        #{finvoicePhone,jdbcType=VARCHAR}, #{finvoiceTaxpayer,jdbcType=VARCHAR}, #{finvoiceAccount,jdbcType=VARCHAR},
+        #{finvoiceBank,jdbcType=VARCHAR}, #{ftotalQty,jdbcType=DECIMAL}, #{ftotalCatQty,jdbcType=DECIMAL},
+        #{fentrySize,jdbcType=INTEGER}, #{fstandardWeight,jdbcType=DECIMAL}, #{fstandardPostage,jdbcType=DECIMAL},
+        #{fweight,jdbcType=DECIMAL}, #{factualPostage,jdbcType=DECIMAL}, #{fisReachPay,jdbcType=INTEGER},
+        #{fexceptionId,jdbcType=VARCHAR}, #{fexceptReason,jdbcType=VARCHAR}, #{fsourceSoNumber,jdbcType=VARCHAR},
+        #{fsourceSoId,jdbcType=VARCHAR}, #{fbesplit,jdbcType=INTEGER}, #{fbemerge,jdbcType=INTEGER},
+        #{fauditor,jdbcType=VARCHAR}, #{fauditTime,jdbcType=TIMESTAMP}, #{fwavebillNumber,jdbcType=VARCHAR},
+        #{fwavebillId,jdbcType=VARCHAR}, #{finwaveTime,jdbcType=TIMESTAMP}, #{fwavePerson,jdbcType=VARCHAR},
+        #{fprintPerson,jdbcType=VARCHAR}, #{fprintTime,jdbcType=TIMESTAMP}, #{fcheckTime,jdbcType=TIMESTAMP},
+        #{fcheckPerson,jdbcType=VARCHAR}, #{fweightPerson,jdbcType=VARCHAR}, #{fweightTime,jdbcType=TIMESTAMP},
+        #{fsellerRemark,jdbcType=VARCHAR}, #{fisurgent,jdbcType=INTEGER}, #{fispresale,jdbcType=INTEGER},
+        #{ftradeFrom,jdbcType=VARCHAR}, #{ffullAddress,jdbcType=VARCHAR}, #{fshippingType,jdbcType=VARCHAR},
+        #{fboxBarCode,jdbcType=VARCHAR}, #{fshortAddress,jdbcType=VARCHAR}, #{fpackageCenterName,jdbcType=VARCHAR},
+        #{fpackageCenterCode,jdbcType=VARCHAR}, #{fweightUnit,jdbcType=VARCHAR}, #{fboxseq,jdbcType=INTEGER},
+        #{fisOut,jdbcType=INTEGER}, #{fsaleIssueNumber,jdbcType=VARCHAR}, #{finvoiceNumber,jdbcType=VARCHAR},
+        #{feditAmt,jdbcType=DECIMAL}, #{feditReason,jdbcType=VARCHAR}, #{fsaleReturnNumber,jdbcType=VARCHAR},
+        #{fbillType,jdbcType=INTEGER}, #{fcompany,jdbcType=VARCHAR}, #{fagentsName,jdbcType=VARCHAR},
+        #{fagentsNo,jdbcType=VARCHAR}, #{fadminOrgUnit,jdbcType=VARCHAR}, #{frequestPerson,jdbcType=VARCHAR},
+        #{finvoiceDeatail,jdbcType=VARCHAR}, #{fshareCode,jdbcType=VARCHAR}, #{fcustomerName,jdbcType=VARCHAR},
+        #{fupdateLogisticsStatus,jdbcType=INTEGER}, #{fversion,jdbcType=INTEGER}, #{fexpress_type,jdbcType=VARCHAR},
+        #{fpay_method,jdbcType=VARCHAR}, #{fbeInvoice,jdbcType=INTEGER}, #{fwechatOrderNumber,jdbcType=VARCHAR},
+        #{flocationGroupId,jdbcType=VARCHAR}, #{fprintData,jdbcType=VARCHAR}, #{fsaleReturnId,jdbcType=VARCHAR},
+        #{fstandardVolume,jdbcType=DECIMAL}, #{fcustomNo,jdbcType=VARCHAR}, #{fmaterialInsurancefee,jdbcType=DECIMAL},
+        #{fsellerflag,jdbcType=INTEGER}, #{fisreturn,jdbcType=BIT}, #{fisprocess,jdbcType=BIT},
+        #{fisrefund,jdbcType=BIT}, #{fislack,jdbcType=BIT}, #{fisoutware,jdbcType=BIT},
+        #{foutbillno,jdbcType=VARCHAR}, #{foutcancelstatus,jdbcType=BIT}, #{fouterrmsg,jdbcType=VARCHAR},
+        #{fallotstatus,jdbcType=BIT}, #{fallotcancelstatus,jdbcType=BIT}, #{falloterrmsg,jdbcType=VARCHAR},
+        #{fsendStartTime,jdbcType=TIMESTAMP}, #{fprocessTime,jdbcType=INTEGER}, #{fpickTime,jdbcType=INTEGER},
+        #{fdistributeTime,jdbcType=INTEGER}, #{femail,jdbcType=VARCHAR}, #{fticketDisamt,jdbcType=DECIMAL},
+        #{fpromotionDisamt,jdbcType=DECIMAL}, #{fpointDisamt,jdbcType=DECIMAL}, #{ftransoutware,jdbcType=INTEGER},
+        #{fgotcode,jdbcType=VARCHAR}, #{fshoppick,jdbcType=BIT}, #{fsendEndTime,jdbcType=TIMESTAMP},
+        #{ftenantid,jdbcType=BIGINT}, #{fpresentType,jdbcType=INTEGER}, #{fboxQty,jdbcType=INTEGER},
+        #{foperator,jdbcType=VARCHAR}, #{ffinishstatus,jdbcType=VARCHAR}, #{finvoiceKind,jdbcType=INTEGER},
+        #{fLogisticsErrorCount,jdbcType=INTEGER}, #{flogisticsStatus,jdbcType=INTEGER},
+        #{fmergeNumber,jdbcType=VARCHAR}, #{furgentTime,jdbcType=TIMESTAMP}, #{ftransOutBillNo,jdbcType=VARCHAR},
+        #{foperateCtrlUser,jdbcType=VARCHAR}, #{foperationFee,jdbcType=DECIMAL}, #{fisverify,jdbcType=BIT},
+        #{fisRelatedAccount,jdbcType=BIT})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.baho.cssmybatis.dao.entity.db2.base.SaleOrderBill">
+        update t_sd_saleorderbill
+        set fcreateDate = #{fcreateDate,jdbcType=TIMESTAMP},
+        fcreateUser = #{fcreateUser,jdbcType=VARCHAR},
+        flastUpdateTime = #{flastUpdateTime,jdbcType=TIMESTAMP},
+        flastUpdateUser = #{flastUpdateUser,jdbcType=VARCHAR},
+        fbillNumber = #{fbillNumber,jdbcType=VARCHAR},
+        ftradeNumber = #{ftradeNumber,jdbcType=VARCHAR},
+        fbillStatus = #{fbillStatus,jdbcType=INTEGER},
+        fplatformId = #{fplatformId,jdbcType=VARCHAR},
+        fplatformShopId = #{fplatformShopId,jdbcType=VARCHAR},
+        fsalePersonId = #{fsalePersonId,jdbcType=VARCHAR},
+        fsaleOrgId = #{fsaleOrgId,jdbcType=VARCHAR},
+        fwarehouseId = #{fwarehouseId,jdbcType=VARCHAR},
+        ftotalAmt = #{ftotalAmt,jdbcType=DECIMAL},
+        factualPayAmt = #{factualPayAmt,jdbcType=DECIMAL},
+        fplatShopDisAmt = #{fplatShopDisAmt,jdbcType=DECIMAL},
+        fplatDisAmt = #{fplatDisAmt,jdbcType=DECIMAL},
+        fcusDisAmt = #{fcusDisAmt,jdbcType=DECIMAL},
+        freceivableAmt = #{freceivableAmt,jdbcType=DECIMAL},
+        fpostage = #{fpostage,jdbcType=DECIMAL},
+        finvoiceAmt = #{finvoiceAmt,jdbcType=DECIMAL},
+        forderDate = #{forderDate,jdbcType=TIMESTAMP},
+        fpayDate = #{fpayDate,jdbcType=TIMESTAMP},
+        fdeliveryTime = #{fdeliveryTime,jdbcType=TIMESTAMP},
+        fsendTime = #{fsendTime,jdbcType=TIMESTAMP},
+        fcurrencyId = #{fcurrencyId,jdbcType=VARCHAR},
+        fremark = #{fremark,jdbcType=VARCHAR},
+        fvipId = #{fvipId,jdbcType=VARCHAR},
+        fbuyName = #{fbuyName,jdbcType=VARCHAR},
+        fbuyerAlipayNo = #{fbuyerAlipayNo,jdbcType=VARCHAR},
+        falipayNo = #{falipayNo,jdbcType=VARCHAR},
+        falipayId = #{falipayId,jdbcType=VARCHAR},
+        fbuyCountryId = #{fbuyCountryId,jdbcType=VARCHAR},
+        fbuyProvinceId = #{fbuyProvinceId,jdbcType=VARCHAR},
+        fbuyCityId = #{fbuyCityId,jdbcType=VARCHAR},
+        fbuyRegionId = #{fbuyRegionId,jdbcType=VARCHAR},
+        fbuyAddress = #{fbuyAddress,jdbcType=VARCHAR},
+        fbuyAccount = #{fbuyAccount,jdbcType=VARCHAR},
+        fbuyMobile = #{fbuyMobile,jdbcType=VARCHAR},
+        fbuyPhone = #{fbuyPhone,jdbcType=VARCHAR},
+        fbuyZipcode = #{fbuyZipcode,jdbcType=VARCHAR},
+        fexpressCompanyId = #{fexpressCompanyId,jdbcType=VARCHAR},
+        ftrackNumber = #{ftrackNumber,jdbcType=VARCHAR},
+        fbuyRemark = #{fbuyRemark,jdbcType=VARCHAR},
+        fisInvoice = #{fisInvoice,jdbcType=INTEGER},
+        finvoiceType = #{finvoiceType,jdbcType=INTEGER},
+        finvoiceHead = #{finvoiceHead,jdbcType=VARCHAR},
+        finvoiceAddress = #{finvoiceAddress,jdbcType=VARCHAR},
+        finvoicePhone = #{finvoicePhone,jdbcType=VARCHAR},
+        finvoiceTaxpayer = #{finvoiceTaxpayer,jdbcType=VARCHAR},
+        finvoiceAccount = #{finvoiceAccount,jdbcType=VARCHAR},
+        finvoiceBank = #{finvoiceBank,jdbcType=VARCHAR},
+        ftotalQty = #{ftotalQty,jdbcType=DECIMAL},
+        ftotalCatQty = #{ftotalCatQty,jdbcType=DECIMAL},
+        fentrySize = #{fentrySize,jdbcType=INTEGER},
+        fstandardWeight = #{fstandardWeight,jdbcType=DECIMAL},
+        fstandardPostage = #{fstandardPostage,jdbcType=DECIMAL},
+        fweight = #{fweight,jdbcType=DECIMAL},
+        factualPostage = #{factualPostage,jdbcType=DECIMAL},
+        fisReachPay = #{fisReachPay,jdbcType=INTEGER},
+        fexceptionId = #{fexceptionId,jdbcType=VARCHAR},
+        fexceptReason = #{fexceptReason,jdbcType=VARCHAR},
+        fsourceSoNumber = #{fsourceSoNumber,jdbcType=VARCHAR},
+        fsourceSoId = #{fsourceSoId,jdbcType=VARCHAR},
+        fbesplit = #{fbesplit,jdbcType=INTEGER},
+        fbemerge = #{fbemerge,jdbcType=INTEGER},
+        fauditor = #{fauditor,jdbcType=VARCHAR},
+        fauditTime = #{fauditTime,jdbcType=TIMESTAMP},
+        fwavebillNumber = #{fwavebillNumber,jdbcType=VARCHAR},
+        fwavebillId = #{fwavebillId,jdbcType=VARCHAR},
+        finwaveTime = #{finwaveTime,jdbcType=TIMESTAMP},
+        fwavePerson = #{fwavePerson,jdbcType=VARCHAR},
+        fprintPerson = #{fprintPerson,jdbcType=VARCHAR},
+        fprintTime = #{fprintTime,jdbcType=TIMESTAMP},
+        fcheckTime = #{fcheckTime,jdbcType=TIMESTAMP},
+        fcheckPerson = #{fcheckPerson,jdbcType=VARCHAR},
+        fweightPerson = #{fweightPerson,jdbcType=VARCHAR},
+        fweightTime = #{fweightTime,jdbcType=TIMESTAMP},
+        fsellerRemark = #{fsellerRemark,jdbcType=VARCHAR},
+        fisurgent = #{fisurgent,jdbcType=INTEGER},
+        fispresale = #{fispresale,jdbcType=INTEGER},
+        ftradeFrom = #{ftradeFrom,jdbcType=VARCHAR},
+        ffullAddress = #{ffullAddress,jdbcType=VARCHAR},
+        fshippingType = #{fshippingType,jdbcType=VARCHAR},
+        fboxBarCode = #{fboxBarCode,jdbcType=VARCHAR},
+        fshortAddress = #{fshortAddress,jdbcType=VARCHAR},
+        fpackageCenterName = #{fpackageCenterName,jdbcType=VARCHAR},
+        fpackageCenterCode = #{fpackageCenterCode,jdbcType=VARCHAR},
+        fweightUnit = #{fweightUnit,jdbcType=VARCHAR},
+        fboxseq = #{fboxseq,jdbcType=INTEGER},
+        fisOut = #{fisOut,jdbcType=INTEGER},
+        fsaleIssueNumber = #{fsaleIssueNumber,jdbcType=VARCHAR},
+        finvoiceNumber = #{finvoiceNumber,jdbcType=VARCHAR},
+        feditAmt = #{feditAmt,jdbcType=DECIMAL},
+        feditReason = #{feditReason,jdbcType=VARCHAR},
+        fsaleReturnNumber = #{fsaleReturnNumber,jdbcType=VARCHAR},
+        fbillType = #{fbillType,jdbcType=INTEGER},
+        fcompany = #{fcompany,jdbcType=VARCHAR},
+        fagentsName = #{fagentsName,jdbcType=VARCHAR},
+        fagentsNo = #{fagentsNo,jdbcType=VARCHAR},
+        fadminOrgUnit = #{fadminOrgUnit,jdbcType=VARCHAR},
+        frequestPerson = #{frequestPerson,jdbcType=VARCHAR},
+        finvoiceDeatail = #{finvoiceDeatail,jdbcType=VARCHAR},
+        fshareCode = #{fshareCode,jdbcType=VARCHAR},
+        fcustomerName = #{fcustomerName,jdbcType=VARCHAR},
+        fupdateLogisticsStatus = #{fupdateLogisticsStatus,jdbcType=INTEGER},
+        fversion = #{fversion,jdbcType=INTEGER},
+        fexpress_type = #{fexpress_type,jdbcType=VARCHAR},
+        fpay_method = #{fpay_method,jdbcType=VARCHAR},
+        fbeInvoice = #{fbeInvoice,jdbcType=INTEGER},
+        fwechatOrderNumber = #{fwechatOrderNumber,jdbcType=VARCHAR},
+        flocationGroupId = #{flocationGroupId,jdbcType=VARCHAR},
+        fprintData = #{fprintData,jdbcType=VARCHAR},
+        fsaleReturnId = #{fsaleReturnId,jdbcType=VARCHAR},
+        fstandardVolume = #{fstandardVolume,jdbcType=DECIMAL},
+        fcustomNo = #{fcustomNo,jdbcType=VARCHAR},
+        fmaterialInsurancefee = #{fmaterialInsurancefee,jdbcType=DECIMAL},
+        fsellerflag = #{fsellerflag,jdbcType=INTEGER},
+        fisreturn = #{fisreturn,jdbcType=BIT},
+        fisprocess = #{fisprocess,jdbcType=BIT},
+        fisrefund = #{fisrefund,jdbcType=BIT},
+        fislack = #{fislack,jdbcType=BIT},
+        fisoutware = #{fisoutware,jdbcType=BIT},
+        foutbillno = #{foutbillno,jdbcType=VARCHAR},
+        foutcancelstatus = #{foutcancelstatus,jdbcType=BIT},
+        fouterrmsg = #{fouterrmsg,jdbcType=VARCHAR},
+        fallotstatus = #{fallotstatus,jdbcType=BIT},
+        fallotcancelstatus = #{fallotcancelstatus,jdbcType=BIT},
+        falloterrmsg = #{falloterrmsg,jdbcType=VARCHAR},
+        fsendStartTime = #{fsendStartTime,jdbcType=TIMESTAMP},
+        fprocessTime = #{fprocessTime,jdbcType=INTEGER},
+        fpickTime = #{fpickTime,jdbcType=INTEGER},
+        fdistributeTime = #{fdistributeTime,jdbcType=INTEGER},
+        femail = #{femail,jdbcType=VARCHAR},
+        fticketDisamt = #{fticketDisamt,jdbcType=DECIMAL},
+        fpromotionDisamt = #{fpromotionDisamt,jdbcType=DECIMAL},
+        fpointDisamt = #{fpointDisamt,jdbcType=DECIMAL},
+        ftransoutware = #{ftransoutware,jdbcType=INTEGER},
+        fgotcode = #{fgotcode,jdbcType=VARCHAR},
+        fshoppick = #{fshoppick,jdbcType=BIT},
+        fsendEndTime = #{fsendEndTime,jdbcType=TIMESTAMP},
+        ftenantid = #{ftenantid,jdbcType=BIGINT},
+        fpresentType = #{fpresentType,jdbcType=INTEGER},
+        fboxQty = #{fboxQty,jdbcType=INTEGER},
+        foperator = #{foperator,jdbcType=VARCHAR},
+        ffinishstatus = #{ffinishstatus,jdbcType=VARCHAR},
+        finvoiceKind = #{finvoiceKind,jdbcType=INTEGER},
+        fLogisticsErrorCount = #{fLogisticsErrorCount,jdbcType=INTEGER},
+        flogisticsStatus = #{flogisticsStatus,jdbcType=INTEGER},
+        fmergeNumber = #{fmergeNumber,jdbcType=VARCHAR},
+        furgentTime = #{furgentTime,jdbcType=TIMESTAMP},
+        ftransOutBillNo = #{ftransOutBillNo,jdbcType=VARCHAR},
+        foperateCtrlUser = #{foperateCtrlUser,jdbcType=VARCHAR},
+        foperationFee = #{foperationFee,jdbcType=DECIMAL},
+        fisverify = #{fisverify,jdbcType=BIT},
+        fisRelatedAccount = #{fisRelatedAccount,jdbcType=BIT}
+        where fid = #{fid,jdbcType=VARCHAR}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select fid, fcreateDate, fcreateUser, flastUpdateTime, flastUpdateUser, fbillNumber,
+        ftradeNumber, fbillStatus, fplatformId, fplatformShopId, fsalePersonId, fsaleOrgId,
+        fwarehouseId, ftotalAmt, factualPayAmt, fplatShopDisAmt, fplatDisAmt, fcusDisAmt,
+        freceivableAmt, fpostage, finvoiceAmt, forderDate, fpayDate, fdeliveryTime, fsendTime,
+        fcurrencyId, fremark, fvipId, fbuyName, fbuyerAlipayNo, falipayNo, falipayId, fbuyCountryId,
+        fbuyProvinceId, fbuyCityId, fbuyRegionId, fbuyAddress, fbuyAccount, fbuyMobile, fbuyPhone,
+        fbuyZipcode, fexpressCompanyId, ftrackNumber, fbuyRemark, fisInvoice, finvoiceType,
+        finvoiceHead, finvoiceAddress, finvoicePhone, finvoiceTaxpayer, finvoiceAccount,
+        finvoiceBank, ftotalQty, ftotalCatQty, fentrySize, fstandardWeight, fstandardPostage,
+        fweight, factualPostage, fisReachPay, fexceptionId, fexceptReason, fsourceSoNumber,
+        fsourceSoId, fbesplit, fbemerge, fauditor, fauditTime, fwavebillNumber, fwavebillId,
+        finwaveTime, fwavePerson, fprintPerson, fprintTime, fcheckTime, fcheckPerson, fweightPerson,
+        fweightTime, fsellerRemark, fisurgent, fispresale, ftradeFrom, ffullAddress, fshippingType,
+        fboxBarCode, fshortAddress, fpackageCenterName, fpackageCenterCode, fweightUnit,
+        fboxseq, fisOut, fsaleIssueNumber, finvoiceNumber, feditAmt, feditReason, fsaleReturnNumber,
+        fbillType, fcompany, fagentsName, fagentsNo, fadminOrgUnit, frequestPerson, finvoiceDeatail,
+        fshareCode, fcustomerName, fupdateLogisticsStatus, fversion, fexpress_type, fpay_method,
+        fbeInvoice, fwechatOrderNumber, flocationGroupId, fprintData, fsaleReturnId, fstandardVolume,
+        fcustomNo, fmaterialInsurancefee, fsellerflag, fisreturn, fisprocess, fisrefund,
+        fislack, fisoutware, foutbillno, foutcancelstatus, fouterrmsg, fallotstatus, fallotcancelstatus,
+        falloterrmsg, fsendStartTime, fprocessTime, fpickTime, fdistributeTime, femail, fticketDisamt,
+        fpromotionDisamt, fpointDisamt, ftransoutware, fgotcode, fshoppick, fsendEndTime,
+        ftenantid, fpresentType, fboxQty, foperator, ffinishstatus, finvoiceKind, fLogisticsErrorCount,
+        flogisticsStatus, fmergeNumber, furgentTime, ftransOutBillNo, foperateCtrlUser, foperationFee,
+        fisverify, fisRelatedAccount
+        from t_sd_saleorderbill
+        where fid = #{fid,jdbcType=VARCHAR}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select fid, fcreateDate, fcreateUser, flastUpdateTime, flastUpdateUser, fbillNumber,
+        ftradeNumber, fbillStatus, fplatformId, fplatformShopId, fsalePersonId, fsaleOrgId,
+        fwarehouseId, ftotalAmt, factualPayAmt, fplatShopDisAmt, fplatDisAmt, fcusDisAmt,
+        freceivableAmt, fpostage, finvoiceAmt, forderDate, fpayDate, fdeliveryTime, fsendTime,
+        fcurrencyId, fremark, fvipId, fbuyName, fbuyerAlipayNo, falipayNo, falipayId, fbuyCountryId,
+        fbuyProvinceId, fbuyCityId, fbuyRegionId, fbuyAddress, fbuyAccount, fbuyMobile, fbuyPhone,
+        fbuyZipcode, fexpressCompanyId, ftrackNumber, fbuyRemark, fisInvoice, finvoiceType,
+        finvoiceHead, finvoiceAddress, finvoicePhone, finvoiceTaxpayer, finvoiceAccount,
+        finvoiceBank, ftotalQty, ftotalCatQty, fentrySize, fstandardWeight, fstandardPostage,
+        fweight, factualPostage, fisReachPay, fexceptionId, fexceptReason, fsourceSoNumber,
+        fsourceSoId, fbesplit, fbemerge, fauditor, fauditTime, fwavebillNumber, fwavebillId,
+        finwaveTime, fwavePerson, fprintPerson, fprintTime, fcheckTime, fcheckPerson, fweightPerson,
+        fweightTime, fsellerRemark, fisurgent, fispresale, ftradeFrom, ffullAddress, fshippingType,
+        fboxBarCode, fshortAddress, fpackageCenterName, fpackageCenterCode, fweightUnit,
+        fboxseq, fisOut, fsaleIssueNumber, finvoiceNumber, feditAmt, feditReason, fsaleReturnNumber,
+        fbillType, fcompany, fagentsName, fagentsNo, fadminOrgUnit, frequestPerson, finvoiceDeatail,
+        fshareCode, fcustomerName, fupdateLogisticsStatus, fversion, fexpress_type, fpay_method,
+        fbeInvoice, fwechatOrderNumber, flocationGroupId, fprintData, fsaleReturnId, fstandardVolume,
+        fcustomNo, fmaterialInsurancefee, fsellerflag, fisreturn, fisprocess, fisrefund,
+        fislack, fisoutware, foutbillno, foutcancelstatus, fouterrmsg, fallotstatus, fallotcancelstatus,
+        falloterrmsg, fsendStartTime, fprocessTime, fpickTime, fdistributeTime, femail, fticketDisamt,
+        fpromotionDisamt, fpointDisamt, ftransoutware, fgotcode, fshoppick, fsendEndTime,
+        ftenantid, fpresentType, fboxQty, foperator, ffinishstatus, finvoiceKind, fLogisticsErrorCount,
+        flogisticsStatus, fmergeNumber, furgentTime, ftransOutBillNo, foperateCtrlUser, foperationFee,
+        fisverify, fisRelatedAccount
+        from t_sd_saleorderbill
+    </select>
+    <select id="queryAllByParam" resultType="com.baho.cssmybatis.common.bean.response.CompensateBill"
+            parameterType="com.baho.cssmybatis.common.bean.request.SalesRequest">
+        SELECT fid as id, fbillNumber as billNum,ftradeNumber as tradeNum, fbillStatus as billStatus, forderDate as
+        orderDate, fpayDate as payDate, fsendTime as sendTime, fbuyProvinceId as buyProvinceId, fbuyCityId as buyCityId,
+        fbuyAddress as address, fbuyAccount as customNick, fbuyMobile as buyMobile, factualPayAmt as
+        actualPayAmt,fexpressCompanyId as expressCompanyId,ftrackNumber as trackNumber,
+        fplatformId as platformId,fplatformShopId as platformShopId,fbuyRemark as buyRemark,fsellerRemark as
+        sellerRemark,fremark as remark
+        FROM t_sd_saleorderbill where 1=1
+        <if test="buyerNick != null and buyerNick != ''">
+            and fbuyAccount like CONCAT(CONCAT('%', #{buyerNick}),'%')
+        </if>
+        <if test="plantFormId != null and plantFormId != ''">
+            and fplatformId = #{plantFormId}
+        </if>
+        <if test="shopId != null and shopId != ''">
+            and fplatformShopId = #{shopId}
+        </if>
+        <if test="timeType != null and timeType != ''">
+            <if test="timeType == '1'">
+                <if test="startTime != null">
+                    and forderDate &gt;= #{startTimeStr}
+                </if>
+                <if test="endTime != null">
+                    and forderDate &gt;= #{endTimeStr}
+                </if>
+            </if>
+            <if test="timeType == '2'">
+                <if test="startTime != null">
+                    and fpayDate &gt;= #{startTimeStr}
+                </if>
+                <if test="endTime != null">
+                    and fpayDate &gt;= #{endTimeStr}
+                </if>
+            </if>
+            <if test="timeType == '3'">
+                <if test="startTime != null">
+                    and fsendTime &gt;= #{startTimeStr}
+                </if>
+                <if test="endTime != null">
+                    and fsendTime &gt;= #{endTimeStr}
+                </if>
+            </if>
+        </if>
+        <if test="billNum != null and billNum != ''">
+            and fbillNumber = #{billNum}
+        </if>
+        <if test="trackNum != null and trackNum != ''">
+            and ftrackNumber = #{trackNum}
+        </if>
+        <if test="status != null and status != ''">
+            and fbillStatus = #{status}
+        </if>
+        <if test="trackCompany != null and trackCompany != ''">
+            and fexpressCompanyId = #{trackCompany}
+        </if>
+        <if test="fidList != null">
+            and fid in
+            <foreach item="item" collection="fidList" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        order by forderDate desc limit #{startNum},#{limit}
+    </select>
+    <select id="getFidByTradeNum" resultType="string">
+        select fparentId from t_sd_saleorderentry where ftradeNumber=#{tradeNum,jdbcType=VARCHAR}
+    </select>
+</mapper>

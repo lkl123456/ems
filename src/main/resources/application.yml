@@ -1,0 +1,64 @@
+server:
+  port: 8089
+  servlet:
+    context-path: /ems
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss # 设置时间返回格式
+    time-zone: GMT+8
+  datasource:
+    # css主测试数据库
+    db1:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      username: root
+      password: 123456
+      jdbc-url: jdbc:mysql://localhost:3306/ry?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&autoReconnect=true&rewriteBatchedStatements=TRUE
+      type: com.alibaba.druid.pool.DruidDataSource
+    # ecc测试库
+    db2:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      username: root
+      password: 123456
+      jdbc-url: jdbc:mysql://localhost:3306/ceshi2?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&autoReconnect=true&rewriteBatchedStatements=TRUE
+      type: com.alibaba.druid.pool.DruidDataSource
+    # bpm测试库
+    db3:
+      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      username: admin
+      password: Baho@123
+      jdbc-url: jdbc:sqlserver://localhost:1433;DatabaseName=ceshi3
+      type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+  cache:
+    ehcache:
+      config: classpath:ehcache.xml
+    type: ehcache
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  servlet:
+    multipart:
+      max-file-size: -1    #上传文件大小不限制
+      max-request-size: -1 #文件大小不限制
+logging:
+  file: ems.log
+  pattern:
+    console: 【BAHO】[%d{yyyy-MM-dd HH:mm:ss}] %yellow(%-5level)[%-15thread] %logger{60}\(%line\) %msg%n #日志格式
+  level:
+    com.baho.ems.dao: DEBUG
